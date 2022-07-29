@@ -1,10 +1,8 @@
 const Applet = imports.ui.applet;
-const Util = imports.misc.util;
 const GLib = imports.gi.GLib;
 const Gio = imports.gi.Gio;
 const Main = imports.ui.main;
 const Lang = imports.lang;
-const PopupMenu = imports.ui.popupMenu;
 const St = imports.gi.St;
 const MessageTray = imports.ui.messageTray;
 const GM_INTERFACE = '<node> \
@@ -50,8 +48,7 @@ class GamemodeApplet extends Applet.IconApplet {
             this.actor.hide();
         }
         this.count = c_count;
-        this.set_applet_tooltip(count + " active clients");
-
+        this.set_applet_tooltip(this.count + " active clients");
     }
 
     _ensureSource() {
