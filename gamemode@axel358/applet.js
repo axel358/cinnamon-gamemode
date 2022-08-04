@@ -31,6 +31,7 @@ class GamemodeApplet extends Applet.IconApplet {
         try {
             this._proxy = GamemodeProxy(Gio.DBus.session, "com.feralinteractive.GameMode", "/com/feralinteractive/GameMode");
             this._proxy.connect("g-properties-changed", Lang.bind(this, this._gamemode_props_changed));
+            this._gamemode_props_changed()
         } catch (e) {
             this._notify("Cinnamon Gamemode", e);
         }
