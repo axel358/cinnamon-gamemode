@@ -12,7 +12,7 @@ const GM_INTERFACE = '<node> \
 </node>';
 
 
-class GamemodeApplet extends Applet.IconApplet {
+class GameModeApplet extends Applet.IconApplet {
 
     constructor(metadata, orientation, panel_height, instance_id) {
         super(orientation, panel_height, instance_id);
@@ -25,28 +25,28 @@ class GamemodeApplet extends Applet.IconApplet {
         this.set_applet_tooltip(_("No active clients"));
 
         //TODO: Make this async?
-        const GamemodeProxy = Gio.DBusProxy.makeProxyWrapper(GM_INTERFACE);
+        const GameModeProxy = Gio.DBusProxy.makeProxyWrapper(GM_INTERFACE);
         this._proxy = null;
 
         try {
-            this._proxy = GamemodeProxy(Gio.DBus.session, "com.feralinteractive.GameMode", "/com/feralinteractive/GameMode");
+            this._proxy = GameModeProxy(Gio.DBus.session, "com.feralinteractive.GameMode", "/com/feralinteractive/GameMode");
             this._proxy.connect("g-properties-changed", Lang.bind(this, this._gamemode_props_changed));
-            this._gamemode_props_changed()
+            this._gamemode_props_changed();
         } catch (e) {
-            this._notify("Cinnamon Gamemode", e);
+            this._notify("Cinnamon GameMode", e);
         }
     }
 
     _gamemode_props_changed(proxy, changed) {
-        //Gamemode has only one prop: ClientCount
+        //GameMode has only one prop: ClientCount
         let c_count = this._proxy.ClientCount;
 
         if (c_count > 0 && this.count == 0) {
             this.actor.show();
-            this._notify("Gamemode is on", "Computer performance has been optimized for playing games");
+            this._notify("GameMode is on", "Computer performance has been optimized for playing games");
 
         } else if (c_count < 1 && this.count > 0) {
-            this._notify("Gamemode is off", "Computer performance has been reset to normal");
+            this._notify("GameMode is off", "Computer performance has been reset to normal");
             this.actor.hide();
         }
         this.count = c_count;
@@ -87,5 +87,5 @@ class GamemodeApplet extends Applet.IconApplet {
 }
 
 function main(metadata, orientation, panel_height, instance_id) {
-    return new GamemodeApplet(metadata, orientation, panel_height, instance_id);
+    return new GameModeApplet(metadata, orientation, panel_height, instance_id);
 }
