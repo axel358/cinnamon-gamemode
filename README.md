@@ -1,4 +1,6 @@
 # cinnamon-gamemode
-Gamemode applet for Cinnamon
+GameMode applet for Cinnamon
 
-A simple extension that provides notifications about gamemode status and number of active clients
+A simple extension that provides notifications about GameMode status and number of active clients
+
+Note: You should restart Cinnamon after enabling this applet
