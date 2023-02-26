@@ -1,6 +1,5 @@
 {
     "uuid": "gamemode@axel358",
     "name": "GameMode",
-    "description": "GameMode status indicator",
-    "icon": "applications-games"
+    "description": "GameMode status indicator"
 }
