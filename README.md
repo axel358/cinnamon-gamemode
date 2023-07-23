@@ -1,5 +1,5 @@
 # Cinnamon GameMode
-A simple extension that provides notifications about GameMode status and number of active clients
+An applet that provides notifications about GameMode status and number of active clients
 
 ![Screenshot](screenshot.png)
 
