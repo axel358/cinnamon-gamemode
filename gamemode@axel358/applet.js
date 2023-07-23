@@ -1,5 +1,4 @@
 const Applet = imports.ui.applet;
-const GLib = imports.gi.GLib;
 const Gio = imports.gi.Gio;
 const Main = imports.ui.main;
 const Lang = imports.lang;
