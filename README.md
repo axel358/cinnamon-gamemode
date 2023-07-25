@@ -1,4 +1,4 @@
-# Cinnamon GameMode
+# Cinnamon GameMode Indicator
 An applet that provides notifications about GameMode status and number of active clients
 
 ![Screenshot](screenshot.png)
